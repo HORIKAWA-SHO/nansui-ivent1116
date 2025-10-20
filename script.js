@@ -1,4 +1,29 @@
 (function(){
+  // Hamburger menu toggle
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('siteNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      var isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    // Close menu when a link is clicked (mobile UX)
+    nav.addEventListener('click', function(e){
+      if(e.target && e.target.tagName === 'A'){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+    // Reset menu state when resized to desktop
+    window.addEventListener('resize', function(){
+      if(window.innerWidth >= 720){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  // Form validation (only on pages that have the form)
   var form = document.getElementById('entryForm');
   if(!form) return;
 
