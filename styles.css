@@ -100,6 +100,17 @@ a:hover{opacity:.9}
   .partner-logo{height:52px}
 }
 
+/* Gallery: force 3 columns even on mobile */
+#gallery .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#gallery .card{grid-column:span 1;background:transparent;border:0;box-shadow:none;padding:0}
+#gallery img{display:block;width:100%;height:auto;border-radius:.6rem}
+
+/* Lightbox */
+.lightbox-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:1000}
+.lightbox-overlay.open{display:flex}
+.lightbox-content{max-width:90vw;max-height:90vh}
+.lightbox-content img{display:block;max-width:90vw;max-height:90vh;border-radius:.6rem}
+
 @media (prefers-color-scheme: dark){
   :root{--primary:#cfcac2;--primary-600:#bdb7ae;--accent:#f3eee3;--ink:#000000;--muted:#000000;--border:#d7d2c8;--bg:#ffffff;--card:#ffffff}
   body{background:var(--bg);color:var(--ink)}

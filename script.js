@@ -23,6 +23,32 @@
     });
   }
 
+  // Lightbox for gallery images
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb ? lb.querySelector('img') : null;
+  if(lb && lbImg){
+    document.addEventListener('click', function(e){
+      var target = e.target;
+      if(target && target.matches('img[data-lightbox]')){
+        lbImg.src = target.src;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+      }
+    });
+    lb.addEventListener('click', function(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      lbImg.removeAttribute('src');
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && lb.classList.contains('open')){
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden','true');
+        lbImg.removeAttribute('src');
+      }
+    });
+  }
+
   // Form validation (only on pages that have the form)
   var form = document.getElementById('entryForm');
   if(!form) return;
