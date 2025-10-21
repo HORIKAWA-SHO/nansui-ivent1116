@@ -100,8 +100,8 @@ a:hover{opacity:.9}
   .partner-logo{height:52px}
 }
 
-/* Gallery: force 3 columns even on mobile */
-#gallery .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+/* Gallery: single column (larger images) */
+#gallery .cards{display:grid;grid-template-columns:1fr;gap:12px}
 #gallery .card{grid-column:span 1;background:transparent;border:0;box-shadow:none;padding:0}
 #gallery img{display:block;width:100%;height:auto;border-radius:.6rem}
 
