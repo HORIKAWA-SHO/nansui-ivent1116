@@ -25,10 +25,11 @@ body{font-family:'Noto Sans JP',system-ui,-apple-system,Segoe UI,Roboto,Helvetic
 .nav a:hover{background:var(--accent)}
 
 @media (max-width:719px){
+  .menu-toggle{display:none}
   .header-inner{position:relative}
-  .nav{position:absolute;left:0;right:0;top:68px;display:none;flex-direction:column;background:var(--card);border-bottom:1px solid var(--border);padding:.5rem}
+  .nav{position:static;display:flex;flex-wrap:wrap;gap:.25rem;background:transparent;border:0;padding:0}
   .nav.open{display:flex}
-  .nav a{padding:.9rem 1rem;border-radius:.5rem;font-size:11px;line-height:1.4;white-space:nowrap}
+  .nav a{padding:.5rem .6rem;border-radius:.5rem;font-size:11px;line-height:1.2;white-space:nowrap}
 }
 
 .hero{position:relative;isolation:isolate;color:#000}
